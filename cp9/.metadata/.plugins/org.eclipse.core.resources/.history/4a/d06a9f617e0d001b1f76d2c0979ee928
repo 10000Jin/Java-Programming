@@ -1,0 +1,44 @@
+package cp8;
+
+class BankAccount {
+	private String name;
+	private String account_num;
+	private int rest;
+	final double interest_rate = 0.03;
+	
+	public BankAccount() {
+		name = "Hong-Gil-Dong";
+		account_num = "1234-00-5678";
+		rest = 10000;
+	}
+	public BankAccount(String n, String a, int r) {
+		name = n;
+		account_num = a;
+		rest = r;
+	}
+	public String getName() { return name; }
+	public void setName(String n) { name = n; }
+	public String getAccount_Num() { return account_num; }
+	public void setAccount_Num(String a) { account_num = a; }
+	public int getRest() { return rest; }
+	public void setRest(int r) { rest = r; }
+	
+	public String toString() {
+		return "°í°´¸í : " + name + "°èÁÂ¹øÈ£ : " + account_num + "ÀÜ¾× : " + rest + "ÀÌÀÚÀ²" + interest_rate; 
+	}
+}
+
+public class P222_No5_BankAccountTest {
+
+	public static void main(String[] args) {
+		BankAccount b1 = new BankAccount("Kim-Chul-Soo", "9876-00-5432", 5000);
+		BankAccount b2 = new BankAccount();
+		BankAccount b3 = new BankAccount();
+		
+		System.out.println(b1);
+		System.out.println(b2);
+		System.out.println(b3);
+
+	}
+
+}

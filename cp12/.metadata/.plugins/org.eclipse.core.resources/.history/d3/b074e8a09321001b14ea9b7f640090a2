@@ -1,0 +1,91 @@
+package cp12;
+
+class Book{
+	private String title;
+	private String auther;
+	private int number;
+	
+	public Book(String t, String a, int n) {
+		title = t;
+		auther = a;
+		number = n;
+		System.out.println("Book 생성자");
+	}
+	
+	public String getTitle() { return title; }
+	public String getAuther() { return auther; }
+	public int getNumber() { return number; }
+	public void setTitle(String t) { title = t; }
+	public void setAuther(String a) { auther = a; }
+	public void setNumber(int n) {number = n;}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Book) {
+			Book other = (Book)obj;
+			if (number == other.number)
+				return true;
+			else
+				return false;
+		}
+		else 
+			return false; 
+	}
+}
+
+class Novel extends Book{
+	public Novel(String t, String a, int n) {
+		super(t, a, n);
+		System.out.println("Novel 생성자");
+	}
+	public void getLateFees(int day) {
+		int fee;
+		fee = 300 * day;
+		System.out.println("Novel" + day + "일 연체료는 " + fee + "원 입니다.");
+	}
+}
+
+class Poet extends Book{
+	public Poet(String t, String a, int n) {
+		super(t, a, n);
+		System.out.println("Poet 생성자");
+	}
+	public void getLateFees(int day) {
+		int fee;
+		fee = 200 * day;
+		System.out.println("Poet" + day + "일 연체료는 " + fee + "원 입니다.");
+	}
+}
+
+class ScienceFiction extends Book{
+	public ScienceFiction(String t, String a, int n) {
+		super(t, a, n);
+		System.out.println("ScienceFiction 생성자");
+	}
+	public void getLateFees(int day) {
+		int fee;
+		fee = 600 * day;
+		System.out.println("ScienceFiction" + day + "일 연체료는 " + fee + "원 입니다.");
+	}
+}
+
+
+public class P297_No6_BookTest {
+
+	public static void main(String[] args) {
+		Novel b1 = new Novel("N", "Lee", 33);
+		Poet b2 = new Poet("P", "Park", 42);
+		ScienceFiction b3 = new ScienceFiction("S", "Jung", 21);
+		Poet b4 = new Poet("X", "Choi", 33);
+		
+		System.out.print();
+		b1.getLateFees(4);
+		b2.getLateFees(8);
+		b3.getLateFees(2);
+		System.out.print();
+		
+		System.out.println("P과 S는 같은 책인가? " + b2.equals(b3));
+		System.out.println("N과 X는 같은 책인가? " + b1.equals(b4));
+		
+		
+	}
+}

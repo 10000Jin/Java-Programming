@@ -1,0 +1,84 @@
+package cp12;
+
+abstract class Book_06 {
+	public Book_06() {   //디폴트 생성자
+		}
+	
+	public Book_06(String number, String title, String author) {
+		setNumber(number);
+		setTitle(title);
+		setAuthor(author);
+	}
+   //필드 선언
+	public String number = "a(가)-0000";   //관리번호
+	public String title = "노인과바다";      //책 이름
+	public String author = "곽대웅";      //저자
+      
+      //equals()메소드 선언
+	public boolean equals(Object obj) {   //함수 선언 객체와 매개변수로 받은 객체의 관리번호를 비교하여   	
+		if(obj instanceof Book_06)
+			return (this.number).equals(((Book_06) obj).number);   //관리번호가 같으면 true 아니면 false를 반환한다.
+		else
+			return false;
+	}
+      
+   //각 필드에 대한 접근자과 설정자 선언
+	public String getNumber() {return number;}
+	public void setNumber(String number) {this.number = number;}
+      
+	public String getTitle() {return title;}
+	public void setTitle(String title) {this.title = title;}
+      
+	public String getAuthor() {return author;}
+	public void setAuthor(String author) {this.author = author;}
+      
+   //추상 메소드 getLateFees() 선언 -> 서브 클래스는 반드시 재정의 해야함
+	public abstract int getLateFees(int late);   //추상 메소드 getLatePees()
+}
+   //Novel 클래스
+class Novel extends Book_06{
+	public Novel() {}
+	public Novel(String number, String title, String author) {
+		super(number, title, author);
+	}
+	public int getLateFees(int late) {
+		return late*300;
+	}
+}
+   //Poet 클래스
+class Poet extends Book_06{
+   public Poet() {}
+   public Poet(String number, String title, String author) {
+      super(number, title, author);
+   }
+      public int getLateFees(int late) {
+         return late*300;
+      }
+   }
+   //ScienceFictiong 클래스
+class ScienceFiction extends Book_06{
+      public ScienceFiction() {}
+         public ScienceFiction(String number, String title, String author) {
+            super(number, title, author);
+         }
+      public int getLateFees(int late) {
+         //System.out.println("연체료 : "+ late*600);
+         return late*300;
+      }
+   }
+
+public class Test {
+      public static void main(String[] args) {
+         Novel N1 = new Novel("1","노인과 바다","헤밍웨이");
+         Poet P = new Poet("3","별이 빛나는 밤","윤동주");
+         ScienceFiction S = new ScienceFiction("42","스타워즈","조지 루카스");
+         
+         System.out.println("Novel와 Poet 비교 -> "+N1.equals(P));
+         System.out.println("Poet와 ScienceFiction 비교 -> "+P.equals(S));
+         System.out.println("Novel의 연체료 "+N1.getLateFees(5));
+         System.out.println("Poet의 연체료 "+P.getLateFees(6));
+         System.out.println("ScienceFiction의 연체료 "+S.getLateFees(3));
+        
+      }
+
+   }

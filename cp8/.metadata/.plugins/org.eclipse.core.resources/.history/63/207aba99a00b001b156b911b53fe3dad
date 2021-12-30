@@ -1,0 +1,50 @@
+package cp8;
+
+class Employee {
+	private String name;								// 이름, 전화번호, 연봉 필드
+	private String number;								// private로 선언
+	private int salary;
+	
+	public String getName() { return name; }			// name에 대한 접근자 메소드
+	public void setName(String n) { name = n; }			// name에 대한 설정자 메소드
+	
+	public String getNumber() { return number; }
+	public void setNumber(String m) { number = m; }
+	
+	public int getSalary() { return salary; }
+	public void setSalary(int s) { salary = s; }
+	
+	public String toString() {
+		return "직원 이름: " + name + "\n직원 전화번호: " + number + "\n직원 연봉: " + salary;
+	}
+	public boolean equals(Employee b) {
+		if (name == b.name && number == b.number && salary == b.salary)
+			return true;
+		else
+			return false;
+	}
+
+}
+
+public class P195_No5 {
+
+	public static void main(String[] args) {
+		Employee em1 = new Employee();
+		em1.setName("Hong");
+		em1.setNumber("010-1234-5678");
+		em1.setSalary(500);
+		
+		// System.out.print("직원 이름: " + em1.name);
+		System.out.println("직원 이름: " + em1.getName());
+		System.out.println(em1);
+		
+		Employee em2 = new Employee();
+		em1.setName("Choi");
+		em1.setNumber("010-9876-5432");
+		em1.setSalary(300);
+		
+		//System.out.print("직원 이름: " + em2.salary);
+		System.out.print("직원 이름: " + em2.getSalary());
+		System.out.print(em2);
+	}
+}

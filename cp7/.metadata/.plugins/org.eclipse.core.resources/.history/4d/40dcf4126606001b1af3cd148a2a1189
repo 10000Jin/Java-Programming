@@ -1,0 +1,43 @@
+package cp7;
+
+import java.util.Scanner;
+
+class Count_Num{
+	void count() {
+		String msg;
+		int len;
+		int count_vow = 0, count_con = 0;
+	
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열을 입력하시오. : ");
+		msg = sc.nextLine();
+	
+		len = msg.length();
+		for (int i=0; i<=(len-1); i++) {
+			switch(msg.charAt(i)){
+			case 'A':	case 'a':	case 'E':	case 'e':
+			case 'I': 	case 'i':	case 'O': 	case 'o':
+			case 'U': 	case 'u':
+				count_vow += 1;
+				break;
+				
+			default:
+				if (msg.charAt(i) != ' ') {
+					count_con += 1;
+					break;
+				}
+			}
+		}
+		System.out.println("모음 개수 : " + count_vow + "개");
+		System.out.println("자음 개수 : " + count_con + "개");
+		sc.close();
+	}
+}
+
+public class P127_No6 {
+
+	public static void main(String[] args) {
+		Count_Num s1 = new Count_Num();
+		s1.count();
+	}
+}

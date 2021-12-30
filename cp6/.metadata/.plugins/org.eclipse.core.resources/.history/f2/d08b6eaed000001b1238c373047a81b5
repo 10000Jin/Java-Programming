@@ -1,0 +1,26 @@
+package cp6;
+
+import java.util.Scanner;
+
+public class P129_Challenge {
+
+	public static void main(String[] args) {
+		double divident, divisor, sum = 3.00;
+		long count;
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("Enter number of Repetition : ");
+	    count = sc.nextLong();
+	    divident = 4.0;
+	      
+	    for(long n =1;n<=count;n++) {
+	    	divisor = (2.0*n)*(2.0*n+1.0)*(2.0*n+2.0);
+	    	sum = sum + divident/divisor;
+	    	divident = (-1.0)*divident;
+	         
+	    }
+	    System.out.println("Pi = "+ sum);
+		sc.close();
+
+	}
+
+}

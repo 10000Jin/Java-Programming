@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/cp11/src/cp11/P264_N02_PersonTest.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="cp11.P264_N02_PersonTest"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="cp11"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="cp11"/>
+</launchConfiguration>

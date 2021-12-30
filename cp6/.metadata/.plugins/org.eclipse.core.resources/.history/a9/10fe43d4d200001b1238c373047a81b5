@@ -1,0 +1,32 @@
+package cp6;
+
+import java.util.Scanner;										// 
+
+public class P129_Challenge {
+
+	public static void main(String[] args) {
+		double divisor, divident, sum;
+		int loop_count, num;
+		
+		Scanner sc = new Scanner(System.in);
+		//divisor = 0.0;
+		divident = 4.0;
+		sum = 3.00;
+		num = 3;
+		
+		System.out.print("¹Ýº¹ È½¼ö : ");
+		loop_count = sc.nextInt();
+		
+		while(loop_count > 0) {
+			divisor = (num - 1.0) * num * (num + 1.0);
+			sum += divident / divisor;
+			divident = -1.0 * divident;
+			num += 2;
+			loop_count--;
+		}
+		
+		System.out.print("Pi = " + sum);
+		sc.close();
+	}
+
+}

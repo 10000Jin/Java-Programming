@@ -1,0 +1,30 @@
+package cp7;
+
+class Movie {
+	String title;
+	double rate;
+	String director;
+	String year;
+	
+	void print() {
+		System.out.println("영화 제목: "+ title);
+		System.out.println("평점: "+ rate);
+		System.out.println("감독: "+ director);
+		System.out.println("개봉 연도: "+ year);
+	}
+}
+
+public class P127_No4 {
+
+	public static void main(String[] args) {
+
+		Movie m1 = new Movie();
+		m1.title = "TransFormers";
+		m1.rate = 4.5;
+		m1.director = "Michael Bay";
+		m1.year = "2007-6-28";
+		m1.print();
+				
+	}
+
+}
